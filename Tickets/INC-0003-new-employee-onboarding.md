@@ -99,3 +99,6 @@ Add-ADGroupMember -Identity "GRP-Management" -Members "youssef.khalil"
 * Use security groups instead of direct user permissions
 * Validate SMB access from client machines, not Domain Controllers
 * Prefer hostname over IP for reliable authentication (Kerberos)
+
+## 📚 KB Article
+KB-003 — New Employee Onboarding Standard Procedure
