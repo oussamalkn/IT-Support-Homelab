@@ -1,112 +1,195 @@
-# 🖥️ IT Support Home Lab — TechMaroc SARL
+# 🖥️ Enterprise Infrastructure Simulation — TechMaroc SARL
 
-> Infrastructure IT complète simulant une PME marocaine réelle.  
-> Projet conçu pour démontrer des compétences en **support IT, administration système, réseau et ITSM**.
-
----
-
-## 🎯 Objectif du projet
-
-Ce laboratoire simule une infrastructure d’entreprise incluant :
-
-- Active Directory (gestion des utilisateurs, groupes et GPO)
-- Réseau sécurisé avec pfSense
-- Supervision infrastructure avec Zabbix
-- Gestion des incidents IT avec GLPI
-- Environnement hybride Microsoft 365 / Azure AD (concept)
-
-👉 Objectif : reproduire un environnement réel de **support IT niveau entreprise (L1/L2)**.
+A fully simulated enterprise IT environment designed to demonstrate real-world IT Support, System Administration, Networking, and ITSM capabilities aligned with Canadian job market requirements (Help Desk / NOC / IT Infrastructure roles).
 
 ---
 
-## 🏗️ Architecture du lab
+# 🎯 Project Objective
 
-| Machine   | Rôle                                    | IP Address            |
+This lab replicates a small-to-medium enterprise IT environment to demonstrate hands-on skills in:
+
+- IT Support (Level 1 / Level 2)
+- Active Directory administration
+- Network troubleshooting & infrastructure support (pfSense)
+- IT Service Management (ITSM)
+- System monitoring & incident response (Zabbix, GLPI)
+- Microsoft 365 / Azure AD (conceptual hybrid environment)
+
+👉 The goal is to simulate real corporate IT operations, not just a technical lab.
+
+---
+
+# 🏢 Business Simulation Context
+
+This environment simulates a real company IT infrastructure where employees depend on:
+
+- Secure network access
+- Centralized identity management
+- Reliable IT services (DNS, DHCP, authentication)
+- Ticket-based IT support system
+- Continuous monitoring and incident response
+
+---
+
+# 🏗️ Architecture Overview
+
+| Machine   | Role                                     | IP Address            |
 |------------|----------------------------------------|----------------------|
 | pfSense    | Firewall / Router / DHCP               | 192.168.10.1         |
 | DC-01      | Active Directory / DNS / GPO           | 192.168.10.2         |
-| SRV-LINUX  | GLPI + Zabbix Monitoring               | 192.168.10.20        |
+| SRV-LINUX  | GLPI (ITSM) + Zabbix Monitoring        | 192.168.10.20        |
 | PC-01      | Windows 10/11 Workstation (Domain Join)| DHCP (192.168.10.100+) |
 | PC-02      | Windows 10/11 Workstation (Domain Join)| DHCP (192.168.10.100+) |
 
 ---
 
-## 🛠️ Technologies utilisées
+# 🛠️ Technologies & Tools
 
-- Active Directory (Users, Groups, OUs, GPO, DNS)
-- Microsoft 365 (Exchange, Teams, SharePoint, OneDrive)
-- Azure AD Connect (Hybrid Identity concept)
-- GLPI (ITSM Ticketing system)
-- Zabbix (Monitoring & alerting)
-- pfSense (Firewall, NAT, VPN, DHCP)
-- GNS3 (Network simulation: VLANs, routing, ACLs)
-- PowerShell / Bash (Automation & scripting)
+## Core Infrastructure
+- Windows Server (Active Directory Domain Services)
+- DNS / DHCP / Group Policy (GPO)
+- Windows 10/11 Enterprise Clients
 
----
+## Networking
+- pfSense Firewall (NAT, DHCP, Routing, Rules)
+- VLAN concepts (via GNS3 simulation)
+- TCP/IP troubleshooting
 
-## 📂 Structure du projet
-IT-Support-Homelab/
-├── Architecture/ # Network diagrams + VM specs
-├── Lab-Setup/ # Step-by-step installation guides
-├── Network-Labs/ # GNS3 labs (routing, VLAN, DHCP)
-├── Tickets/ # Incident management (ITIL style)
-├── Runbooks/ # Operational procedures
-├── Security/ # Firewall rules, GPO, policies
-├── Screenshots/ # Proof of work (AD, GLPI, Zabbix)
-├── Scripts/ # PowerShell & automation scripts
-├── Templates/ # Ticket & KB templates
-└── Reports/ # Weekly reports 
+## IT Operations
+- GLPI (ITSM Ticketing System)
+- Zabbix (Monitoring & Alerting)
+
+## Automation & Scripting
+- PowerShell (Windows administration)
+- Bash scripting (Linux automation)
+
+## Conceptual / Enterprise Tools
+- Microsoft 365 (Exchange, Teams, SharePoint)
+- Azure AD (Hybrid Identity concept)
 
 ---
 
-## 📊 Ticketing Summary
+# 🔄 Operational Workflow (REAL IT SUPPORT SIMULATION)
+
+This lab simulates real enterprise IT operations:
+
+1. User reports an incident via GLPI
+2. Ticket is categorized (Network / AD / System)
+3. Investigation using logs (Zabbix / system tools)
+4. Root cause analysis
+5. Resolution applied (AD / network / system fix)
+6. Ticket closure + documentation (KB update)
+
+👉 This reflects real ITIL-based support workflow.
+
+---
+
+# 📊 Ticketing Summary
 
 | Metric                   | Value       |
 |-------------------------|-------------|
 | Total tickets resolved  | 16+         |
-| Average resolution time  | ~40 minutes |
+| Average resolution time | ~40 minutes |
 | Knowledge base articles | 16+         |
-| Domains covered         | AD, M365, Network, Infra |
+| Domains covered         | AD, M365, Network, Infrastructure |
 
 ---
 
-## 📸 Evidence & Screenshots
+# 🔥 Real-World IT Support Scenarios
 
-This section includes real proof of implementation:
+## Scenario 1 — Domain Authentication Issue
+- User unable to log into domain
+- DNS resolution failure identified
+- Root cause: DHCP misconfiguration
+- Fix: Corrected DNS scope on pfSense
+- Result: Access restored
 
-- Active Directory user management
+---
+
+## Scenario 2 — Network Connectivity Failure
+- Multiple clients lost internet access
+- pfSense logs analyzed
+- Root cause: Incorrect NAT rule
+- Fix: Updated firewall configuration
+- Result: Network restored
+
+---
+
+## Scenario 3 — Active Directory Access Issue
+- User cannot access shared resources
+- Missing AD group membership
+- Fix: Updated security group + GP refresh
+- Result: Access restored
+
+---
+
+# 🧠 Key Skills Demonstrated
+
+## IT Support
+- Incident troubleshooting (L1 / L2)
+- Ticket handling (ITSM workflow)
+- User support & system access resolution
+
+## System Administration
+- Active Directory (Users, Groups, OUs)
+- Group Policy configuration
+- Windows Server administration
+
+## Networking
+- TCP/IP troubleshooting
+- DNS / DHCP management
+- Firewall configuration (pfSense)
+
+## Monitoring
+- Infrastructure monitoring (Zabbix)
+- Alert handling and system diagnostics
+
+---
+
+# 🔐 Security Concepts
+
+- Network segmentation (conceptual VLAN design)
+- Firewall rules and NAT policies
+- Active Directory security groups
+- Access control enforcement
+
+---
+
+# 📸 Proof of Work
+
+- Active Directory user & group management
 - Group Policy (GPO) configuration
-- GLPI dashboard (ticketing system)
+- GLPI ticket dashboard
 - Zabbix monitoring alerts
-- Network topology diagram (draw.io)
+- Network topology diagrams (pfSense LAN architecture)
 
 ---
 
-## 🔐 Key Skills Demonstrated
+# 🚀 Career Relevance (Canada Market)
 
-- IT Support (Level 1 / Level 2)
-- Windows Server Administration
-- Active Directory Management
-- Network troubleshooting
-- ITSM (Incident & Request management)
-- System monitoring (Zabbix)
-- Basic cybersecurity hardening
-- Automation with PowerShell / Bash
+This lab aligns with roles such as:
 
----
-
-## 🚀 Project Value
-
-This project simulates a real enterprise IT environment and demonstrates:
-
-- Real-world troubleshooting scenarios
-- IT infrastructure deployment
-- Network and security configuration
-- Helpdesk and ITSM workflows
+- IT Support Technician (L1 / L2)
+- Help Desk Analyst
+- NOC Technician
+- IT Infrastructure Support Specialist
+- Junior System Administrator
 
 ---
 
-## 🔗 Contact
+# 💡 Business Value
 
-- 💼 LinkedIn: Oussama Nebbak
-- 📧 Email: nebbakossama@gmail.com
+This project demonstrates the ability to:
+
+- Support enterprise users in real IT environments
+- Troubleshoot network and system issues under pressure
+- Manage IT infrastructure using industry-standard tools
+- Operate ITSM workflows similar to corporate environments
+- Maintain system uptime and service reliability
+
+---
+
+# 🔗 Contact
+
+- LinkedIn: Oussama Nebbak  
+- Email: nebbakossama@gmail.com
